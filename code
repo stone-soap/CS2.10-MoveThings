@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="iu">
+	<head>
+		<meta charset="UTF-8">
+		<title>drapak.ca - Move things around smoothly</title>
+		<meta 
+			name="description" 
+			content="Assignment: Use Javascript and jQuery to move things around smoothly">
+		<meta name="author" content="-kris-">
+		<!--
+			Change log:
+				Created:	8. Oct 2015											- Drapak
+				Modified:	25. March 2017	- reworked for improved style		- Drapak
+							30. April 2017	- fixed long lines					- Drapak
+							29. Oct 2024    - made code copy 					- Chisholm
+							
+				Finished:	
+		-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<style>
+
+			#sewersBack {
+				position:   absolute;
+				width:      100%;
+				height:  	100%;
+				left:  		0px; 
+			}
+
+			#animateGirl {
+				position:   absolute;
+				width:  	51px;
+				height: 	101px;
+				left:  		300px;
+				top: 		180px;
+			}
+
+			#damnCat {
+				position:   absolute;
+				width: 	    75px;
+				height: 	75px;
+				left:  		1200px;
+				top: 		250px;
+			}
+
+			#freakyButton {
+				position:   absolute;
+				width:      220px;
+				height:  	25px; 
+				left:  		10px;
+				top:  		15px; 
+				font-family: 	Georgia, serif;
+				font-size: 		15px;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#454739;
+				background-color: #9f9d8e;
+				border:         2px solid #454739;
+			}
+
+			#catGood {
+				position:   absolute;
+				width: 	    70px;
+				height: 	70px;
+				left:  		1052px;
+				top: 		380px;
+				visibility: hidden;
+			}
+
+
+
+		</style>
+	</head>
+
+	<body>
+		<!--
+			Create a program that uses Javascript with the jQuery library 
+			to move something smoothly around the screen.
+			
+			1. Link to the jQuery library in the head of your page
+			2. Put a background image in your body
+			3. Add an image of something you want to move around
+			4. Give that image an ID
+			5. Change the positioning mode of the animated element using CSS in <style>
+			6. Trigger the animation using javaScript/jQuery
+
+			I LOVE CODING!!!!
+
+------------STYLE GUIDE FOR LONG LINES: DO NOT PASS COLUMN 95 -------------------------------|
+		-->
+
+		<img 
+			id="sewersBack"
+			src="https://static.wikia.nocookie.net/fearandhunger/images/0/05/Sewers1.png.png/revision/latest?cb=20230101002631">
+		<img 
+			id="catGood"
+			src="file:///C:/Users/cks850000/Desktop/cat45.png">
+
+		<img 
+			id="animateGirl"
+			src="https://fearandhunger.wiki.gg/images/d/d6/15.png?20230124204246">	
+
+		<img 
+			id="damnCat"
+			src="https://d2bzx2vuetkzse.cloudfront.net/images_without_background/ee565870-2e4f-41cc-98d3-923a923d850c.png">
+
+
+		<button id="freakyButton">help the girl save the cat</button>
+
+		<script>
+			//output
+			var animateImage =function() {
+				console.log('when I animate the image..?');
+			//jQuery will use the dolla sign and it's goofy library to move image
+
+			//move the girl in a diagonal towards cat
+			$( "#animateGirl" ).animate( { top: "+=200px" }, { duration: "slow" } ); //1
+			// move right 200px from current pos
+			$( "#animateGirl" ).animate( { left: "+=200px" }, { duration: "slow" } ); 
+			// move diagonally
+			$( "#animateGirl" ).animate( { left: "+=200px", top: "+=100px" }, { duration: "slow" } ); //3
+
+			$( "#animateGirl" ).animate( { left: "-=300px" }, { duration: "slow" } ); 
+
+			$( "#animateGirl" ).animate( { left: "+=200px", top: "+=50px" }, { duration: "slow" } ); //5
+
+			$( "#animateGirl" ).animate( { left: "+=500px" }, { duration: "slow" } ); 
+
+			$( "#animateGirl" ).animate( { left: "-=50px", top: "-=170px" }, { duration: "slow" } ); //7
+
+			$( "#animateGirl" ).animate( { left: "-=30px", top: "-=20px" } );
+
+			}
+
+
+			//output
+			var animateCat =function() {
+				console.log('when da cat moves');
+				//jfreaky will use the dolla sign + library to mova da image. 
+
+				//move the cat towards the girl
+				$( "#damnCat" ).animate( { top: "+=40px"} );
+
+				$( "#damnCat" ).animate( { left: "-=70px", top: "+=20px" } );
+				
+				$( "#damnCat" ).animate( { left: "-=80px"} );
+
+				$( "#damnCat" ).animate( { top: "+=70px"} );
+//				checkPos();
+			}
+
+//			var checkPos = function(){
+				//get offsets of image, use if to check 
+//				if( document.querySelector( '#damnCat' ).offsetTop; == 380+'px' ){	
+//					console.log('catmovement');
+//	            	document.querySelector( '#damnCat' ).style.visibility = "hidden";
+//	            }
+//	        }
+
+
+
+			
+//freakyButton
+
+			//input, move image when button click
+			document.querySelector( "#animateGirl" ).onclick = animateImage;
+			document.querySelector( "#damnCat" ).onclick = animateCat; 
+
+
+		</script>
+	</body>
+</html>
